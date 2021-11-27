@@ -54,9 +54,9 @@ void pathFinder(int *path, int *node, int **choose, int num, int i, int j) {
 int main(int argc, char *argv[]) {
     //////////// read the input file /////////////
     char buffer[200];
-    fstream fin(argv[2]);
+    fstream fin(argv[1]);
     fstream fout;
-    fout.open(argv[3],ios::out);
+    fout.open(argv[2],ios::out);
     fin.getline(buffer,200);
     fin.getline(buffer,200);
     int junk,num;
