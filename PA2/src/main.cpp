@@ -53,25 +53,19 @@ void pathFinder(int *path, int *node, int **choose, int num, int i, int j) {
 
 int main(int argc, char *argv[]) {
     //////////// read the input file /////////////
-    char buffer[200];
     fstream fin(argv[1]);
-    fstream fout;
-    fout.open(argv[2],ios::out);
-    fin.getline(buffer,200);
-    fin.getline(buffer,200);
-    int junk,num;
-    vector<int> data;
-    while (fin >> junk >> num)
-        data.push_back(num);
+    fstream fout(argv[2]);
+    fin.open(argv[1], ios::in);
+    fout.open(argv[2], ios::out);
 
     //////////// programming assignment part /////////////
     int num;
-    cin >> num;
+    fin >> num;
     int *node = new int[num];
     for (int i = 0; i < num / 2; ++i) {
         int t;
-        cin >> t;
-        cin >> node[t];
+        fin >> t;
+        fin >> node[t];
         node[node[t]] = t;
     }
     int **table = new int *[num];
@@ -113,8 +107,8 @@ int main(int argc, char *argv[]) {
 
     QuickSort(road, 0, count - 1);
     for (int i = 0; i < count; ++i) {
-        cout << road[i] << " " << node[road[i]] << endl;
+        fout << road[i] << " " << node[road[i]] << endl;
     }
-    cout << table[0][num - 1] << endl;
+    fout << table[0][num - 1] << endl;
     return 0;
 }
