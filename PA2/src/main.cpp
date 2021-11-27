@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -50,7 +51,20 @@ void pathFinder(int *path, int *node, int **choose, int num, int i, int j) {
         pathFinder(path, node, choose, num, k + 1, j - 1);
 }
 
-int main() {
+int main(int argc, char *argv[]) {
+    //////////// read the input file /////////////
+    char buffer[200];
+    fstream fin(argv[2]);
+    fstream fout;
+    fout.open(argv[3],ios::out);
+    fin.getline(buffer,200);
+    fin.getline(buffer,200);
+    int junk,num;
+    vector<int> data;
+    while (fin >> junk >> num)
+        data.push_back(num);
+
+    //////////// programming assignment part /////////////
     int num;
     cin >> num;
     int *node = new int[num];
