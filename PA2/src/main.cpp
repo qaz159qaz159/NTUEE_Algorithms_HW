@@ -110,5 +110,7 @@ int main(int argc, char *argv[]) {
         fout << road[i] << " " << node[road[i]] << endl;
     }
     fout << table[0][num - 1] << endl;
+    fin.close()
+    fout.close();
     return 0;
 }
