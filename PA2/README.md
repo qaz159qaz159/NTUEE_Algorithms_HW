@@ -5,6 +5,12 @@
 ## Date: 2021/11/27       ##
 
 ### How to run the program ###
-Just cd into the directory of the program and make.
-Then there will be a file named "mps" of the path "/bin/mps".
-Then you can run the program by "mps < <input_files> > <output_files>".
+Just cd into the directory of the program and execute
+```
+make
+```
+Then there will be a file named `mps` of the path `/bin/mps`.
+Then you can run the program by
+```
+./mps <input_files> <output_files>
+```
