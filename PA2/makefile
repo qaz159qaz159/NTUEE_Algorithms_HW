@@ -1,9 +1,9 @@
 CC = g++
 OPTIMS = -O3
 
-./bin/main: ./src/main.cpp
+./bin/mps: ./src/main.cpp
 	@echo "Compiling main.cpp..."
-	$(CC) $(OPTIMS) -o ./bin/main ./src/main.cpp
+	$(CC) $(OPTIMS) -o ./bin/mps ./src/main.cpp
 	@echo "Done."
 
 clean:
